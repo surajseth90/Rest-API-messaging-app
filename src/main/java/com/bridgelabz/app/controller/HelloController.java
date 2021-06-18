@@ -18,13 +18,16 @@ public class HelloController {
 	@RequestMapping(method = RequestMethod.GET, value = { "/query" })
 	public String sayHello(@RequestParam(value = "name") String name) {
 		return "Hello " + name + "!";
-
 	}
 
 	@GetMapping("/param/{name}")
 	public String sayHelloParam(@PathVariable String name) {
 		return "Hello " + name + "!";
+	}
 
+	@RequestMapping(value = { "/query2" }, method = RequestMethod.GET)
+	public String sayHello(@RequestParam(value = "fname") String fname, @RequestParam(value = "lname") String lname) {
+		return "HELLO  " + fname + " " + lname + " !! ";
 	}
 
 }
